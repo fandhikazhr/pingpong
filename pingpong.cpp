@@ -249,3 +249,40 @@ class cGameManger{
 					quit = true;
 			}
 		}
+		void Logic(){
+
+			int ballx = ball->getX();
+			int bally = ball->getY();
+			int player1x = player1->getX();
+			int player2x = player2->getX();
+			int player1y = player1->getY();
+			int player2y = player2->getY();
+			
+			// left paddle
+			for (int i =0; i < 4; i++)
+				if (ballx == player1x + 1)
+					if (bally == player1y + i)
+						ball->changeDirection((eDir)((rand() % 3) + 4));
+
+			// right paddle
+			for (int i =0; i < 4; i++)
+				if (ballx == player2x - 1)
+					if (bally == player2y + i)
+						ball->changeDirection((eDir)((rand() % 3) + 1));
+			
+			// bottom wall
+			if (bally == height - 1)
+				ball->changeDirection(ball->getDirection() == DOWNRIGHT ? UPRIGHT : UPLEFT);
+
+			// top wall
+			if (bally == 0)
+				ball->changeDirection(ball->getDirection() == UPRIGHT ? DOWNRIGHT : DOWNLEFT);
+
+			// right wall
+			if (ballx == width - 1)
+				ScoreUp(player1);
+
+			// left wall
+			if (ballx == 0)
+				ScoreUp(player2);
+		}
