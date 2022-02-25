@@ -61,3 +61,29 @@ class cBall{
 		inline int getX() { return x; }
 		inline int getY() { return y; }
 		inline eDir getDirection() { return direction; }
+		void Move(){
+			switch(direction){
+				case STOP:
+					break;
+				case LEFT:
+					x--;
+				break;
+				case RIGHT:
+					x++;
+				break;
+				case UPLEFT:
+					x--; y--;
+				break;
+				case DOWNLEFT:
+					x--; y++;
+				break;
+				case UPRIGHT:
+					x++; y--;
+				break;
+				case DOWNRIGHT:
+					x++; y++;
+				break;
+				default:
+					break;
+			}
+		}
