@@ -286,3 +286,16 @@ class cGameManger{
 			if (ballx == 0)
 				ScoreUp(player2);
 		}
+		void Run(){
+		
+			while(!quit){
+			
+				Draw();
+				Input();
+				Logic();
+				this_thread::sleep_for(chrono::milliseconds(80));
+
+			}
+
+		}
+};
