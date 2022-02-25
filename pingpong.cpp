@@ -215,3 +215,37 @@ class cGameManger{
 			cout << "Score 2 : " << score2 << endl;
 
 		}
+		void Input(){
+		
+			ball->Move();
+
+			int ballx = ball->getX();
+			int bally = ball->getY();
+			int player1x = player1->getX();
+			int player2x = player2->getX();
+			int player1y = player1->getY();
+			int player2y = player2->getY();
+
+			if (_kbhit()){
+			
+				char current = getchar();
+				if (current == up1)
+					if (player1y > 0)
+						player1->moveUp();
+				if (current == up2)
+					if (player2y > 0)
+						player2->moveUp();
+				if (current == down1)
+					if (player1y + 4 < height)
+						player1->moveDown();
+				if (current == down2)
+					if (player2y + 4 < height)
+						player2->moveDown();
+
+				if (ball->getDirection() == STOP)
+					ball->randomDirection();
+
+				if (current == 'q')
+					quit = true;
+			}
+		}
