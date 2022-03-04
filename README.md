@@ -16,6 +16,7 @@ clang++ -Wall -std=c++11 pingpong.cpp -o pingpong
 <h5>Player 1</h5>
 
 - <kbd>w</kbd> for `up`
+- <kbd>s</kbd> for `down`
 
 ## Preview
 
