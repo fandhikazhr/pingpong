@@ -26,4 +26,7 @@ clang++ -Wall -std=c++11 pingpong.cpp -o pingpong
 
 ## Preview
 
+![preview](https://user-images.githubusercontent.com/99522867/156913395-48138957-9dd2-478d-ac5e-9e7869d92ad7.gif)
+
+
 <p>You can play demo in here : https://replit.com/@FandhikaAzhar/pingpong#main.cpp</p>
